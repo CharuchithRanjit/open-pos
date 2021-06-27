@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!TODO: Insert jinja2 stuff here>
+	<title>{% block title %}{% endblock %}</title>
+	<link rel ="stylesheet" href="{{ url_for('static, filename='style.css') }}">
+	{% block head %}
+
+	{% endblock %}
 </head>
+
 <body>
-	<!TODO: Insert jinja2 stuff here>
+	{% block body %}
+
+	{% endblock %}
 </body>
+
 <footer>
-	<!TODO: Insert jinja2 stuff here>
+	{% block footer %}
+
+	{% endblock %}
 </footer>
+
 </html>
