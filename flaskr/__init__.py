@@ -1,3 +1,5 @@
+# Create the app for the flask server
+
 import os
 from flask import Flask
 
