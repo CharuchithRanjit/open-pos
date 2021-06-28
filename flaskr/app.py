@@ -8,12 +8,13 @@ from flask import redirect
 from flask import render_template
 from flask import request
 from flask import url_for
+from flask import session
 
 from flaskr.db import get_db
 from flaskr.auth import signin
 from flaskr.auth import signup
 from flaskr.auth import signout
-from flaskr.auth import ses_signin
+from flaskr.auth import auth_check
 
 
 bp = Blueprint("app", __name__)
@@ -56,7 +57,10 @@ def signout() -> object:
 def user_home() -> object:
 	file_path url_for('templates/user', filename='home.html')
 	render = lambda : render_template(file_path)
-	return render()
+	if not auth_check(session['email'], session['hash']):
+		redirect('/')
+	else:
+		return render()
 
 
 # The admin panel
