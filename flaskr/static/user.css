@@ -1,0 +1,42 @@
+@color-1st: #ffea92;
+@color-2nd: #5bc995;
+
+@menu-width-desktop: 240px;
+@menu-width-tablet: 90px;
+@menu-width-phone: 230px;
+
+@icon-url-base: ;
+@icon-url-dashboard: ;
+@icon-url-customers: ;
+@icon-url-users: ;
+@icon-url-settings: ;
+
+body {
+	background: @color-1st;
+	margin: 0;
+	font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+	color: #fff;
+	padding-left: @menu-width-desktop;
+}
+
+main {
+	position: relative;
+	height: 100vh;
+
+	.helper{
+		background: rgba(0, 0, 0, 0.2);
+		color: @color-1st;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		padding: 1.2em 2em;
+		text-align: center;
+		font-size: 2em;
+		font-weight: bold;
+
+		span {
+			color: rgba(0, 0, 0, 0.2);
+		}
+	}
+}
