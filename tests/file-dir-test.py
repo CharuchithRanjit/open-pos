@@ -6,5 +6,4 @@ for folder in __file__.split('/'):
 		break
 	else:
 		path = path + '/'
-
 print(path)
