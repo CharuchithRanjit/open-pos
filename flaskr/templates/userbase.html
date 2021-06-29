@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %} No Title {% endblock %}</title>
+</head>
+
 <div id="sidebar" class="sidebar">
   <a href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</a>
   <a href="#">&#9832;</a>
@@ -19,6 +25,8 @@
 </div>
 
 <div id="main">
-  <h2>Home test</h2>
-  <p>Content...</p>
+  {% block main %}
+
+  {% endblock %}
 </div>
+</html>
