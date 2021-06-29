@@ -47,15 +47,21 @@ def index() -> object:
 
 
 # DYNAMIC PAGE
-@bp.route('/signin')
-def signin() -> object:
+@bp.route('/auth/user/signin')
+def user_signin() -> object:
 	file_path = url_for('templates/auth', filename='signin.html')
 	render = lambda : render_template(file_path)
 	return render()
 
 
 # DYNAMIC PAGE
-@bp.route('/signup')
+@bp.route('/auth/admin/signin')
+def admin_signin() -> object:
+	file_path = 
+
+
+# DYNAMIC PAGE
+@bp.route('/admin/user/signup')
 def signup() -> object:
 	file_path = url_for('templates/auth', filename='signup.html')
 	render = lambda : render_template(file_path)

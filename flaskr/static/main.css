@@ -1,36 +1,35 @@
-header {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
+html {
+	background: grey;
 }
 
-body {
-	margin-top:  0px;
-	margin-bottom: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
+.main .company-name {
+	padding-top: 5%;
+	font-size: 50px;
+	text-align: center;
 }
 
-footer {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
+.main .company-name a {
+	text-decoration: none;
+	white-space: nowrap;
+	color: white;
 }
 
-::-webkit-scrollbar {
-	width: 10px;
+.main .signin-options {
+	padding-top: 4%;
+	padding-bottom: 4%;
+	font-size: 30px;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 20%;
+	margin-bottom: 20%;
+	display:  block;
+	text-align: center;
+	background-color: black;
 }
 
-::-webkit-scrollbar-track {
-	background:  #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-	background:  #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background:  #555;
+.main .signin-options a {
+	vertical-align: middle;
+	text-decoration: none;
+	white-space: nowrape;
+	color: white;
 }

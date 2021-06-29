@@ -1,9 +1,14 @@
-{% extends {{ url_for('templates', filename='base.html') }} %}
+{% extends 'mainbase.html' %}
 {% block title %} Welcome {% endblock %}
 {% block main %}
-
-Login as :
-<button>User</button>
-<button>Admin</button>
-
+<div class="main">
+	<div class="company-name">
+		<a>Open P.O.S</a>
+	</div>
+	<div class="signin-options">
+		<a href="">Signin as user</a>
+		<br>
+		<a href="#">Signin as admin</a>
+	</div>
+</div>
 {% endblock %}
