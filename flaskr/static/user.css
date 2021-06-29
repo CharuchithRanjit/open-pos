@@ -1,0 +1,101 @@
+:root {
+  --sidebar_color: #111;
+  --sidebar_font_color: #818181;
+  --sidebar_font_h_color: #f1f1f1;
+  --sidebar_pad: 60px;
+  --sidebar_desktop_e: 160px;
+  --sidebar_desktop_s: 50px;
+}
+
+.sidebar {
+  height: 100%;
+  width: var(--sidebar_desktop_s);
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background-color: var(--sidebar_color);
+  overflow-x: hidden;
+  padding-top: var(--sidebar_pad);
+  padding-bottom: var(--sidebar_pad);
+}
+
+.sidebar a {
+  padding: 8px 0px 8px 0px;
+  margin: auto;
+  width: 50%;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--sidebar_font_color);
+  display: block;
+}
+
+.sidebar a:hover {
+  color: var(--sidebar_font_h_color);
+}
+
+.sidebar .down {
+  position: absolute;
+  bottom: 20.5%;
+  left: 15px;
+}
+
+.sidebar .openbtn {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 50%;
+  font-size: 36px;
+  border: none;
+}
+
+.sidebar .openbtn:hover {
+  color: var(--sidebar_font_h_color);
+}
+
+.navmenu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--sidebar_color);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.navmenu a {
+  padding: 8px 8px 8px 32px;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.navmenu a:hover {
+  color: #f1f1f1;
+}
+
+.navmenu .down {
+  position: absolute;
+  bottom: 15%;
+}
+
+.navmenu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  margin-left: var(--sidebar_desktop_s);
+  transition: margin-left .5s;
+  padding: 20px;
+}

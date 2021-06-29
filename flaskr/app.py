@@ -1,5 +1,12 @@
-# The main file flask gets webpages from
+"""
+Filename : app.py
+Description : Returns web pages to display.
+"""
 
+# Python Dependencies
+None
+
+# Dependencies
 from flask import Flask
 from flask import Blueprint
 from flask import flash
@@ -10,17 +17,19 @@ from flask import request
 from flask import url_for
 from flask import session
 
-from flaskr.db import get_db
-from flaskr.auth import signin
-from flaskr.auth import signup
-from flaskr.auth import signout
-from flaskr.auth import auth_check
-
+# Local Dependencies
+from flaskr.auth import user_check
+from flaskr.auth import user_signup
 
 bp = Blueprint("app", __name__)
 
+"""
+---------------------------
+--- Public facing pages ---
+---------------------------
+"""
 
-# The main login page
+# STATIC PAGE
 @bp.route('/')
 def index() -> object:
 	file_path = url_for('templates/main', filename='index.html')
@@ -28,7 +37,7 @@ def index() -> object:
 	return render()
 
 
-# The sign in page
+# DYNAMIC PAGE
 @bp.route('/signin')
 def signin() -> object:
 	file_path = url_for('templates/auth', filename='signin.html')
@@ -36,7 +45,7 @@ def signin() -> object:
 	return render()
 
 
-# The sign up page
+# DYNAMIC PAGE
 @bp.route('/signup')
 def signup() -> object:
 	file_path = url_for('templates/auth', filename='signup.html')
@@ -44,26 +53,79 @@ def signup() -> object:
 	return render()
 
 
-# The sign out page
-@bp.route('/signout')
-def signout() -> object:
-	file_path = url_for('templates/auth', filename='signout.html')
-	render = lambda : redner_template(file_path)
-	return render()
+"""
+-------------------------
+--- User facing pages ---
+-------------------------
+"""
 
-
-# The home page for the user
+# DYNAMIC PAGE
 @bp.route('/user/home')
 def user_home() -> object:
 	file_path url_for('templates/user', filename='home.html')
 	render = lambda : render_template(file_path)
-	if not auth_check(session['email'], session['hash']):
-		redirect('/')
-	else:
+	if user_check(session['username'], session['password']):
 		return render()
+	else:
+		redirect('/')
 
 
-# The admin panel
+# DYNAMIC PAGE
+@bp.route('/user/schedule')
+def user_schedule() -> object:
+	file_path url_for('templates/user', filename='schedule.html')
+	render = lambda : render_template(file_path)
+	if user_check(session['username'], session['password']):
+		return render()
+	else:
+		redirect('/')
+
+
+# DYNAMIC PAGE
+@bp.route('/user/hours')
+def user_hours() -> object:
+	file_path url_for('templates/user', filename='hours.html')
+	render = lambda : render_template(file_path)
+	if user_check(session['username'], session['password']):
+		return render()
+	else:
+		redirect('/')
+
+
+# DYNAMIC PAGE
+@bp.route('/user/help')
+def user_help() -> object:
+	file_path url_for('templates/user', filename='help.html')
+	render = lambda : render_template(file_path)
+	if user_check(session['username'], session['password']):
+		return render()
+	else:
+		redirect('/')
+
+
+# DYNAMIC PAGE
+@bp.route('/user/settings')
+def user_settings() -> object:
+	file_path url_for('templates/user', filename='settings.html')
+	render = lambda : render_template(file_path)
+	pass
+
+
+# DYNAMIC PAGE
+@bp.route('/user/signout')
+def user_signout() -> object:
+	file_path url_for('templates/user', filename='signout.html')
+	render = lambda : render_template(file_path)
+	pass
+
+
+"""
+--------------------------
+--- Admin facing pages ---
+--------------------------
+"""
+
+# DYNAMIC PAGE
 @bp.route('/admin/home')
 def admin_home() -> object:
 	file_path = url_for('templates/admin', filename='home.html')
