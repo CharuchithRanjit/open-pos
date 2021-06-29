@@ -1,10 +1,12 @@
 # Handles all of the authentication stuff
 import hashlib
 import os
+import sys
 
-from flask.db import write_user
-from flask.db import get_salt
-from flask.db import check_key
+sys.path.insert(1, '/Users/jadon/Python/open-pos')
+from flaskr.db import write_user
+from flaskr.db import get_salt
+from flaskr.db import check_key
 
 
 def user_signup(username, password, firstname, lastname, dob) -> list:

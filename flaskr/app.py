@@ -4,7 +4,7 @@ Description : Returns web pages to display.
 """
 
 # Python Dependencies
-None
+import sys
 
 # Dependencies
 from flask import Flask
@@ -18,6 +18,7 @@ from flask import url_for
 from flask import session
 
 # Local Dependencies
+sys.path.insert(1, '/Users/jadon/Python/open-pos')
 from flaskr.auth import user_check
 from flaskr.auth import user_signup
 
@@ -32,8 +33,8 @@ bp = Blueprint("app", __name__)
 # STATIC PAGE
 @bp.route('/')
 def index() -> object:
-	file_path = url_for('templates/main', filename='index.html')
-	render = lambda : render_tempate(file_path)
+	file_path = 'main/index.html'
+	render = lambda : render_template(file_path)
 	return render()
 
 
@@ -62,7 +63,7 @@ def signup() -> object:
 # DYNAMIC PAGE
 @bp.route('/user/home')
 def user_home() -> object:
-	file_path url_for('templates/user', filename='home.html')
+	file_path = url_for('templates/user', filename='home.html')
 	render = lambda : render_template(file_path)
 	if user_check(session['username'], session['password']):
 		return render()
@@ -73,7 +74,7 @@ def user_home() -> object:
 # DYNAMIC PAGE
 @bp.route('/user/schedule')
 def user_schedule() -> object:
-	file_path url_for('templates/user', filename='schedule.html')
+	file_path = url_for('templates/user', filename='schedule.html')
 	render = lambda : render_template(file_path)
 	if user_check(session['username'], session['password']):
 		return render()
@@ -84,7 +85,7 @@ def user_schedule() -> object:
 # DYNAMIC PAGE
 @bp.route('/user/hours')
 def user_hours() -> object:
-	file_path url_for('templates/user', filename='hours.html')
+	file_path = url_for('templates/user', filename='hours.html')
 	render = lambda : render_template(file_path)
 	if user_check(session['username'], session['password']):
 		return render()
@@ -95,7 +96,7 @@ def user_hours() -> object:
 # DYNAMIC PAGE
 @bp.route('/user/help')
 def user_help() -> object:
-	file_path url_for('templates/user', filename='help.html')
+	file_path = url_for('templates/user', filename='help.html')
 	render = lambda : render_template(file_path)
 	if user_check(session['username'], session['password']):
 		return render()
@@ -106,7 +107,7 @@ def user_help() -> object:
 # DYNAMIC PAGE
 @bp.route('/user/settings')
 def user_settings() -> object:
-	file_path url_for('templates/user', filename='settings.html')
+	file_path = url_for('templates/user', filename='settings.html')
 	render = lambda : render_template(file_path)
 	pass
 
@@ -114,7 +115,7 @@ def user_settings() -> object:
 # DYNAMIC PAGE
 @bp.route('/user/signout')
 def user_signout() -> object:
-	file_path url_for('templates/user', filename='signout.html')
+	file_path = url_for('templates/user', filename='signout.html')
 	render = lambda : render_template(file_path)
 	pass
 
