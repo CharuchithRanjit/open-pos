@@ -3,7 +3,15 @@ import hashlib
 import os
 import sys
 
-sys.path.insert(1, '/Users/jadon/Python/open-pos')
+path = ''
+for folder in __file__.split('/'):
+	path = path + folder
+	if folder == 'open-pos':
+		break
+	else:
+		path = path + '/'
+sys.path.insert(1, path)
+
 from flaskr.db import write_user
 from flaskr.db import get_salt
 from flaskr.db import check_key

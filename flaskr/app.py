@@ -18,7 +18,15 @@ from flask import url_for
 from flask import session
 
 # Local Dependencies
-sys.path.insert(1, '/Users/jadon/Python/open-pos')
+path = ''
+for folder in __file__.split('/'):
+	path = path + folder
+	if folder == 'open-pos':
+		break
+	else:
+		path = path + '/'
+sys.path.insert(1, path)
+
 from flaskr.auth import user_check
 from flaskr.auth import user_signup
 
