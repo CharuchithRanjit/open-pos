@@ -1,4 +1,6 @@
 # Handles all the database stuff
+import sys
+
 path = ''
 for folder in __file__.split('/'):
 	path = path + folder
