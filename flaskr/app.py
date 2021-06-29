@@ -29,16 +29,12 @@ sys.path.insert(1, path)
 
 from flaskr.auth import user_check
 from flaskr.auth import user_signup
+from flaskr.auth import admin_check
+from flaskr.auth import admin_signup
 
 bp = Blueprint("app", __name__)
 
-"""
----------------------------
---- Public facing pages ---
----------------------------
-"""
 
-# STATIC PAGE
 @bp.route('/')
 def index() -> object:
 	file_path = 'main/index.html'
@@ -46,38 +42,23 @@ def index() -> object:
 	return render()
 
 
-# DYNAMIC PAGE
 @bp.route('/auth/user/signin')
 def user_signin() -> object:
-	file_path = url_for('templates/auth', filename='signin.html')
+	file_path = 'auth/user/signin.html'
 	render = lambda : render_template(file_path)
 	return render()
 
 
-# DYNAMIC PAGE
 @bp.route('/auth/admin/signin')
 def admin_signin() -> object:
-	file_path = 
-
-
-# DYNAMIC PAGE
-@bp.route('/admin/user/signup')
-def signup() -> object:
-	file_path = url_for('templates/auth', filename='signup.html')
+	file_path = 'auth/admin/signin.html'
 	render = lambda : render_template(file_path)
 	return render()
 
 
-"""
--------------------------
---- User facing pages ---
--------------------------
-"""
-
-# DYNAMIC PAGE
 @bp.route('/user/home')
 def user_home() -> object:
-	file_path = url_for('templates/user', filename='home.html')
+	file_path = 'user/home.html'
 	render = lambda : render_template(file_path)
 	if user_check(session['username'], session['password']):
 		return render()
@@ -85,10 +66,9 @@ def user_home() -> object:
 		redirect('/')
 
 
-# DYNAMIC PAGE
 @bp.route('/user/schedule')
 def user_schedule() -> object:
-	file_path = url_for('templates/user', filename='schedule.html')
+	file_path = 'templates/user/schedule.html'
 	render = lambda : render_template(file_path)
 	if user_check(session['username'], session['password']):
 		return render()
@@ -96,10 +76,9 @@ def user_schedule() -> object:
 		redirect('/')
 
 
-# DYNAMIC PAGE
 @bp.route('/user/hours')
 def user_hours() -> object:
-	file_path = url_for('templates/user', filename='hours.html')
+	file_path = 'templates/user/hours.html'
 	render = lambda : render_template(file_path)
 	if user_check(session['username'], session['password']):
 		return render()
@@ -107,10 +86,9 @@ def user_hours() -> object:
 		redirect('/')
 
 
-# DYNAMIC PAGE
 @bp.route('/user/help')
 def user_help() -> object:
-	file_path = url_for('templates/user', filename='help.html')
+	file_path = 'templates/user/help.html'
 	render = lambda : render_template(file_path)
 	if user_check(session['username'], session['password']):
 		return render()
@@ -118,33 +96,30 @@ def user_help() -> object:
 		redirect('/')
 
 
-# DYNAMIC PAGE
 @bp.route('/user/settings')
 def user_settings() -> object:
-	file_path = url_for('templates/user', filename='settings.html')
+	file_path = 'templates/user/settings.html'
 	render = lambda : render_template(file_path)
-	pass
+	if user_check(session['username'], session['password']):
+		return render()
+	else:
+		redirect('/')
 
 
-# DYNAMIC PAGE
 @bp.route('/user/signout')
 def user_signout() -> object:
-	file_path = url_for('templates/user', filename='signout.html')
+	file_path = 'templates/user/signout.html'
 	render = lambda : render_template(file_path)
 	pass
 
 
-"""
---------------------------
---- Admin facing pages ---
---------------------------
-"""
-
-# DYNAMIC PAGE
 @bp.route('/admin/home')
 def admin_home() -> object:
-	file_path = url_for('templates/admin', filename='home.html')
+	file_path = 'templates/admin/home.html'
 	render = lambda : render_template(file_path)
-	return render()
+	if admin_check(session['username'], session['password']):
+		return render()
+	else:
+		redirect('/')
 
 

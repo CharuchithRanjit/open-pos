@@ -15,9 +15,21 @@ def write_user(username, salt, key, firstname, lastname, dob, perms) -> bool:
 	pass
 
 
-def get_salt(username) -> int:
+def get_user_salt(username) -> int:
 	pass
 
 
-def check_key(username, key) -> bool:
+def check_user_key(username, key) -> bool:
+	pass
+
+
+def write_admin(username, salt, key) -> bool:
+	pass
+
+
+def get_admin_salt(username) -> int:
+	pass
+
+
+def check_admin_key(username, key) -> bool:
 	pass
