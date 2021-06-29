@@ -33,3 +33,11 @@ def get_admin_salt(username) -> int:
 
 def check_admin_key(username, key) -> bool:
 	pass
+
+
+def user_clock_in(username) -> None:
+	pass
+
+
+def user_clock_out(username) -> None:
+	pass
