@@ -41,3 +41,20 @@ def user_clock_in(username) -> None:
 
 def user_clock_out(username) -> None:
 	pass
+
+
+def write_user_pref(username, pref) -> None:
+	pass
+
+
+def read_user_pref(username, pref) -> None:
+	pass
+
+
+def write_admin_pref(username, pref) -> None:
+	pass
+
+
+def read_admin_pref(username, pref) -> None:
+	pass
+
