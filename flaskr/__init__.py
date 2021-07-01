@@ -10,6 +10,8 @@ for folder in __file__.split('/'):
 		break
 	else:
 		path = path + '/'
+# TODO: Make path a variable that can be imported by other code
+# in this dir? so that way I don't have to do this for each file.
 sys.path.insert(1, path)
 
 from flaskr.app import bp

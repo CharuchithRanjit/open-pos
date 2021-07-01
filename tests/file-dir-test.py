@@ -1,3 +1,5 @@
+#TODO: Delete this later for now it's useful to copy and paste from.
+
 print(__file__)
 path = ''
 for folder in __file__.split('/'):
@@ -6,4 +8,5 @@ for folder in __file__.split('/'):
 		break
 	else:
 		path = path + '/'
+
 print(path)
