@@ -1,4 +1,5 @@
-# Software for GUI register
+# Python Dependencies
+import sys
 
 path = ''
 for folder in __file__.split('/'):

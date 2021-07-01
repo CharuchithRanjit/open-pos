@@ -1,6 +1,7 @@
-# This is where you start the webserver from
+# Python Dependencies
 import sys
 
+# Exsternal Dependencies
 from flask import Flask
 
 path = ''

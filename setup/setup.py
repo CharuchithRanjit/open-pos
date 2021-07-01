@@ -1,1 +1,5 @@
-# Run this before you run the website for the first time
+# Python Dependencies
+import sys
+
+from __init__ import return_path
+sys.path.insert(1, return_path())

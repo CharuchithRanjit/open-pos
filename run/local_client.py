@@ -1,4 +1,5 @@
-# This is where you start the local gui client from.
+# Python Dependencies
+import sys
 
 path = ''
 for folder in __file__.split('/'):
@@ -8,6 +9,8 @@ for folder in __file__.split('/'):
 	else:
 		path = path + '/'
 sys.path.insert(1, path)
+
+from local_client.main import *
 
 if __name__ == '__main__':
 	pass

@@ -1,12 +1,7 @@
-"""
-Filename : app.py
-Description : Returns web pages to display.
-"""
-
 # Python Dependencies
 import sys
 
-# Dependencies
+# Exsternal Dependencies
 from flask import Flask
 from flask import Blueprint
 from flask import flash
@@ -18,20 +13,14 @@ from flask import url_for
 from flask import session
 
 # Local Dependencies
-path = ''
-for folder in __file__.split('/'):
-	path = path + folder
-	if folder == 'open-pos':
-		break
-	else:
-		path = path + '/'
-sys.path.insert(1, path)
-
+from __init__ import return_path
+sys.path.insert(1, return_path())
 from flaskr.auth import user_check
 from flaskr.auth import user_signup
 from flaskr.auth import admin_check
 from flaskr.auth import admin_signup
 
+# Flask blueprint
 bp = Blueprint("app", __name__)
 
 

@@ -1,17 +1,11 @@
-# Handles all of the authentication stuff
+# Python Dependencies
 import hashlib
 import os
 import sys
 
-path = ''
-for folder in __file__.split('/'):
-	path = path + folder
-	if folder == 'open-pos':
-		break
-	else:
-		path = path + '/'
-sys.path.insert(1, path)
-
+# Local Dependencies
+from __init__ import return_path
+sys.path.insert(1, return_path())
 from flaskr.db import write_user
 from flaskr.db import get_user_salt
 from flaskr.db import check_user_key

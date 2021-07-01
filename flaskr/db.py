@@ -1,14 +1,9 @@
-# Handles all the database stuff
+# Python Dependencies
 import sys
 
-path = ''
-for folder in __file__.split('/'):
-	path = path + folder
-	if folder == 'open-pos':
-		break
-	else:
-		path = path + '/'
-sys.path.insert(1, path)
+# Local Dependencies
+from __init__ import return_path
+sys.path.insert(1, return_path())
 
 
 def write_user(username, salt, key, firstname, lastname, dob, perms) -> bool:

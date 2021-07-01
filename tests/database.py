@@ -1,12 +1,9 @@
-# Tests for the web database
-path = ''
-for folder in __file__.split('/'):
-	path = path + folder
-	if folder == 'open-pos':
-		break
-	else:
-		path = path + '/'
-sys.path.insert(1, path)
+# Python Dependencies
+import sys
+
+# Local Dependencies
+from __init__ import return_path
+sys.path.insert(1, return_path())
 
 from flaskr.db import *
 
