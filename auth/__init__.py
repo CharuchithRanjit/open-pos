@@ -20,7 +20,6 @@ def return_path() -> str:
 	Returns:
 	str : The root file path
 	"""
-
 	path = ''
 	for folder in __file__.split('/'):
 		path = path + folder

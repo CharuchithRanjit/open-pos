@@ -17,8 +17,19 @@ from flask import Flask
 from app import bp
 
 
-# Returns root file path.
-def return_path()
+def return_path() -> str:
+	"""
+	Returns the correct path for local dependencies.
+
+	Gets the current file path, then loops up two files and finally adds open-pos file path to the end.
+
+	Parameters:
+	None
+
+	Returns:
+	str : The root file path
+	"""
+
 	path = ''
 	for folder in __file__.split('/'):
 		path = path + folder
