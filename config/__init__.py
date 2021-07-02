@@ -1,5 +1,5 @@
 __author__ = "Jadon Zufall"
-__copyright__ = "Copyright 2021, Amphetamines"
+__copyright__ = "Copyright 2021, Jadon Zufall"
 __credits__ = ["Jadon Zufall"]
 __license__ = "MIT"
 __version__ = "dev_non_functional"
