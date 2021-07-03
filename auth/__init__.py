@@ -1,3 +1,18 @@
+"""
+Short Description
+
+Classes:
+User
+
+Functions:
+None
+
+Misc variables:
+DATABASE_KEY (str) -- The key for the database
+DATABASE_PASSWORD (str) -- The password for the database
+DATABASE_URL (str) -- The url for the database
+"""
+
 __author__ = "Jadon Zufall"
 __copyright__ = "Copyright 2021, Jadon Zufall"
 __credits__ = ["Jadon Zufall"]
@@ -10,9 +25,7 @@ __status__ = "non_functional"
 
 def return_path() -> str:
 	"""
-	Returns the correct path for local dependencies.
-
-	Gets the current file path, then loops up two files and finally adds open-pos file path to the end.
+	Returns the root file path for dependencies.
 
 	Parameters:
 	None
