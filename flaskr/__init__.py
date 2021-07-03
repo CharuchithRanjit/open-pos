@@ -8,6 +8,7 @@ __email__ = "jadonzufall@gmail.com"
 __status__ = "non_functional"
 
 # Python Dependencies
+import os
 import sys
 
 # Exsternal Dependencies
@@ -30,13 +31,7 @@ def return_path() -> str:
 	str : The root file path
 	"""
 
-	path = ''
-	for folder in __file__.split('/'):
-		path = path + folder
-		if folder == 'open-pos':
-			break
-		else:
-			path = path + '/'
+	path = os.path.dirname(os.path.dirname(__file__))
 	return path
 
 
