@@ -1,14 +1,42 @@
 # Python Dependencies
 import sys
+import os
 
 # Exsternal Dependencies
 import mysql.connector
 from mysql.connector import errorcode
+import supabase_py
+from supabase_py import create_client
+from supabase_py import Client
 
 # Local Dependencies
 from __init__ import return_path
 sys.path.insert(1, return_path())
-from config.database_config import get_config
+from config.settings import DATABASE_KEY
+from config.settings import DATABASE_PASSWORD
+from config.settings import DATABASE_URL
+
+
+
+import os
+from supabase_py import create_client, Client
+
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
+supabase: Client = create_client(url, key)
+
+
+class database:
+	def __init__(self):
+		self.db = create_client(DATABASE_URL, DATABASE_KEY)
+
+	def create_account(self, email, password):
+		pass
+
+	def sign_in(self, email, password):
+		user = self.db.auth.signin(email=email password=password)
+
+		
 
 
 # TODO : This function is currently suseptable to SQL Injection.  Well this is likely not an issue fix later.
