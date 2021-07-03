@@ -7,6 +7,8 @@ __maintainer__ = "Jadon Zufall"
 __email__ = "jadonzufall@gmail.com"
 __status__ = "non_functional"
 
+import os
+
 
 def return_path() -> str:
 	"""
@@ -20,11 +22,5 @@ def return_path() -> str:
 	Returns:
 	str : The root file path
 	"""
-	path = ''
-	for folder in __file__.split('/'):
-		path = path + folder
-		if folder == 'open-pos':
-			break
-		else:
-			path = path + '/'
+	path = os.path.dirname(os.path.dirname(__file__))
 	return path
