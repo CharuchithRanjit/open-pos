@@ -60,3 +60,6 @@ target/
 # Virtual Env
 venv
 .DS_STORE
+
+# VS-CODE
+.vscode
