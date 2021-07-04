@@ -34,10 +34,10 @@ For handling reading and writing to the database this is also where the debug da
 ### /flaskr
 This stores everything todo with the flask web-server.  (Flask dev server is only intended for development a real web-server will be used if this ever goes to a production phase.)
 
-### /local_client
+### /gui_client
 This is the local client version of the website, more advanced tools will be avalable here that will not be avalable on the web server by default.  This is intended to be ran on a local computer in the store so employees can't clock in randomly from the comfort of their own home.  This will of course be configurable because it's open source so you can really configure whatever you want.
 
-### /local_register
+### /gui_till
 This is the software for the register to ring up customers it will automatically update inventory calculate price etc.  Should add support for opening drawers, counting money, and taking credit card payments.
 
 ### /run
