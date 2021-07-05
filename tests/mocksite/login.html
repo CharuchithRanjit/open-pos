@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Login
+    <form action="" name = "login">
+        Username:<input type="text" name="user"/>
+        Password<input type="password" name="pswd"/>
+        <input type="button" onclick="check(this.form)" value="Login"/>
+    </form>
+    <script language="javascript">
+        function check(form)
+        {
+         if(form.user.value == "user" && form.pswd.value == "pswd")
+          {
+            window.open('Additional.html')
+          }
+         else
+         {
+           alert("Incorrect Password")
+          }
+        }
+    </script>
+</body>
+</html>
